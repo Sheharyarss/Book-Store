@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Account;
 import com.example.demo.domain.Player;
 import com.example.demo.dto.PlayerDTO;
 import com.example.demo.exception.AlreadyExistsException;
+import com.example.demo.repository.AccountRepository;
 import com.example.demo.repository.PlayerRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,25 +18,30 @@ public class PlayerService {
      PlayerRepository playerRepository;
 
      @Autowired
-     AccountService accountService;
+     AccountRepository accountRepository;
 
      @Autowired
     ModelMapper modelMapper;
 
-    public PlayerDTO save(PlayerDTO playerDTO) {
-        Player player = todo(playerDTO);
-        String email = player.getEmail();
-        if (emailIsPresent(email)){
-            throw new AlreadyExistsException(String.format("User Already exists on email => %s",email));
+    /**
+     * this function saves the player with unique email and creates an account respect to your player id
+     * @param playerDTO
+     * @return
+     */
+
+    public PlayerDTO savePlayer(PlayerDTO playerDTO) {
+
+        if (isNotUniqueEmail(playerDTO.getEmail())){
+            throw new AlreadyExistsException(String.format("User Already exists on email => %s",playerDTO.getEmail()));
         }else {
-         Player savedPlayer =  playerRepository.save(player);
-         PlayerDTO playerDTO1=todto(savedPlayer);
-         accountService.createAccount(savedPlayer);
-         return playerDTO1;
+         Player savedPlayer =  playerRepository.save(todo(playerDTO));
+         Account acc = Account.builder().balance(0.00).player(savedPlayer).build();
+            accountRepository.save(acc);
+         return todto(savedPlayer);
         }}
 
 
-    public Boolean emailIsPresent(String email){
+    public Boolean isNotUniqueEmail(String email){
         Optional<String> email2 = playerRepository.findByEmail(email);
         if (email2.isPresent()){
               return true;}

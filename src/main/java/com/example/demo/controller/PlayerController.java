@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.Player;
 import com.example.demo.domain.Transaction;
 import com.example.demo.dto.PlayerDTO;
 import com.example.demo.dto.TransactionDTO;
@@ -29,11 +28,11 @@ public class PlayerController {
 
     @PostMapping("/save")
     public ResponseEntity<PlayerDTO> registerPlayer(@Valid @RequestBody PlayerDTO playerDTO) {
-        return ResponseEntity.ok(playerService.save(playerDTO));}
+        return ResponseEntity.ok(playerService.savePlayer(playerDTO));}
 
     @GetMapping("balance/{id}")
     public ResponseEntity<Double> getBalanceById(@PathVariable Long id){
-        return accountService.getBalance(id);
+        return ResponseEntity.ok(accountService.getBalance(id));
     }
 
     @PostMapping("credit/{id}")

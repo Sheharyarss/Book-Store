@@ -16,16 +16,22 @@ public class AccountService {
     @Autowired
     AccountRepository accountRepository;
 
-    public void createAccount(Player savedPlayer) {
-//        Account account = new Account();
-//        account.setBalance(0.00);
-//        account.setPlayer(savedPlayer);
-        Account acc = Account.builder().balance(0.00).player(savedPlayer).build();
-        accountRepository.save(acc);}
 
-    public ResponseEntity<Double> getBalance(Long id) {
+
+    /**
+     * this function get the balance of account from player id
+     * @param id
+     * @return
+     */
+    public Double getBalance(Long id) {
         Double balance= playerPresentById(id).getBalance();
-        return ResponseEntity.ok(balance);}
+        return balance;}
+
+    /**
+     * this function will check for the player which is present on the subsequent player id
+     * @param id
+     * @return
+     */
 
     public Account playerPresentById(Long id) {
         Optional<Account> account = accountRepository.findByPlayerId(id);
@@ -33,5 +39,6 @@ public class AccountService {
             return account.get();}
         else {
             throw new RecordNotFoundException(String.format("Player does not exists on id => %d",id));}}
+
 }
 
