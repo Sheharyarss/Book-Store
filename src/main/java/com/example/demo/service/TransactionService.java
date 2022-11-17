@@ -2,24 +2,22 @@ package com.example.demo.service;
 
 
 import com.example.demo.domain.Account;
-import com.example.demo.domain.Player;
 import com.example.demo.domain.Transaction;
-import com.example.demo.dto.PlayerDTO;
 import com.example.demo.dto.TransactionDTO;
 import com.example.demo.exception.AlreadyExistsException;
 import com.example.demo.exception.InvalidAmountException;
 import com.example.demo.exception.RecordNotFoundException;
 import com.example.demo.repository.AccountRepository;
 import com.example.demo.repository.TransactionRepository;
-import jdk.nashorn.internal.ir.IfNode;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class TransactionService {

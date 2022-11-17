@@ -6,14 +6,12 @@ import com.example.demo.dto.PlayerDTO;
 import com.example.demo.exception.AlreadyExistsException;
 import com.example.demo.repository.AccountRepository;
 import com.example.demo.repository.PlayerRepository;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 

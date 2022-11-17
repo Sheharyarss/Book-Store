@@ -1,11 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Account;
-import com.example.demo.domain.Player;
 import com.example.demo.exception.RecordNotFoundException;
 import com.example.demo.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

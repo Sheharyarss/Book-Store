@@ -13,6 +13,7 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
     @ExceptionHandler(value = AlreadyExistsException.class)
     public ResponseEntity<ErrorMessage> emailConflictException(AlreadyExistsException ex){
         ErrorMessage errorMessage = ErrorMessage.builder().body(ex.getMessage()).code(HttpStatus.CONFLICT)
