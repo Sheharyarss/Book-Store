@@ -13,14 +13,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 public class BookStore {
 
-	public static void main (String[] args) {
-		SpringApplication.run (BookStore.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BookStore.class, args);
+    }
 
-	@Bean
-	public ModelMapper modelMapper () {
-		return new ModelMapper ();
-	}
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 }
 
 
