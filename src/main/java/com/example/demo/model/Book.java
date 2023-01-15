@@ -1,25 +1,38 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+
 @Entity
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long   id;
+    private Long bookId;
     private String title;
-    private String author;
-    private String description;
+    private Integer  num_pages;
+//    private Publisher publisher_id;
+    private String publication_date;
 
+    private Integer price;
+    private Integer wholeSalePrice;
+
+    @ManyToOne
+    private Author authorId;
+    @ManyToMany
+    private List<Language> languageId;
+    @ManyToMany
+    private List<Genre> genreId;
+    @ManyToOne
+    private Discounts discountId;
+    @ManyToMany
+    private List<Publisher> publisherId;
 }

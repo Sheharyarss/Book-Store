@@ -47,19 +47,19 @@ public class BookService {
         )).collect(Collectors.toList());
     }
 
-    public BookDto updateBookById(Long id, BookDto bookDto) {
-        Optional<Book> book = bookRepo.findById(id);
-        if (book.isPresent()) {
-            Book book1 = book.get();
-            book1.setTitle(bookDto.getTitle());
-            book1.setAuthor(bookDto.getAuthor());
-            book1.setDescription(bookDto.getDescription());
-            Book book2 = bookRepo.save(book1);
-            return modelMapper.map(book2, BookDto.class);
-        }else{
-            throw new DoesNotExist("Book Does Not Exist on id: " + id);
-        }
-    }
+//    public BookDto updateBookById(Long id, BookDto bookDto) {
+//        Optional<Book> book = bookRepo.findById(id);
+//        if (book.isPresent()) {
+//            Book book1 = book.get();
+//            book1.setTitle(bookDto.getTitle());
+//            book1.setAuthor(bookDto.getAuthor());
+//            book1.setDescription(bookDto.getDescription());
+//            Book book2 = bookRepo.save(book1);
+//            return modelMapper.map(book2, BookDto.class);
+//        }else{
+//            throw new DoesNotExist("Book Does Not Exist on id: " + id);
+//        }
+//    }
 
     public void deleteBookById(Long id) {
         Optional<Book> book = bookRepo.findById(id);

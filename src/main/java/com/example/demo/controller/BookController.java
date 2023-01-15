@@ -56,10 +56,10 @@ public class BookController {
      * @param bookDto
      * @return
      */
-    @PutMapping("/book/{id}")
-    public ResponseEntity<BookDto> updateBookById(@PathVariable Long id, @RequestBody BookDto bookDto) {
-        return ResponseEntity.ok(bookService.updateBookById(id, bookDto));
-    }
+//    @PutMapping("/book/{id}")
+//    public ResponseEntity<BookDto> updateBookById(@PathVariable Long id, @RequestBody BookDto bookDto) {
+//        return ResponseEntity.ok(bookService.updateBookById(id, bookDto));
+//    }
 
     /**
      * This will delete book by id
