@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class NewReleaseDto {
 
-    private Integer nsId;
-    private Book    bookId;
+    private Integer newReleaseId;
+    private List<Book> bookId;
+
 }

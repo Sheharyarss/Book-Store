@@ -20,7 +20,5 @@ public class GiftCard {
     private Long giftId;
     private String gift;
 
-    @ManyToMany
-    private List<Customer> customerId;
 
 }

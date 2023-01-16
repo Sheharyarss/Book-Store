@@ -23,6 +23,9 @@ public class Customer {
     private String lastName;
     private String email;
 
+    @ManyToMany
+    private List<GiftCard> giftCardId;
+
     @ManyToOne
     @JoinColumn(name = "addressId")
     private Address address;
