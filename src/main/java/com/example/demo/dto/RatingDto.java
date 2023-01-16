@@ -16,7 +16,6 @@ public class RatingDto  {
 
     private Integer  ratingId;
     private Integer  rating;
-    private Customer customerId;
-    private Book     bookId;
+
 
 }

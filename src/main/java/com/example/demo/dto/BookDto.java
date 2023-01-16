@@ -26,4 +26,5 @@ public class BookDto {
     private Genre     genreId;
     private Discounts discountId;
     private Publisher publisherId;
+    private Rating ratingList;
 }

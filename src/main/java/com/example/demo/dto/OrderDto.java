@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,11 +15,11 @@ import lombok.NoArgsConstructor;
 @Data
 public class OrderDto {
 
-    private Integer OrderId;
-    private Book bookId;
-    private Customer customerId;
-    private Address addressId;
-    private PaymentOptions optionId;
+    private Integer    OrderId;
+    private List<Book> bookId;
+    private List<Customer>   customerId;
+    private Address    addressId;
+    private PaymentOptions paymentOptionId;
     private ShippingMethod methodId;
 
 }

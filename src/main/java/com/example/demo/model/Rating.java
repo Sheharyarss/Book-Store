@@ -19,9 +19,4 @@ public class Rating {
     private Long ratingId;
     private Integer rating;
 
-    @OneToOne
-    private Customer customerId;
-
-    @OneToMany
-    private List<Book> bookId;
 }

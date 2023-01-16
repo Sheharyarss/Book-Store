@@ -35,4 +35,6 @@ public class Book {
     private Discounts discountId;
     @ManyToMany
     private List<Publisher> publisherId;
+    @OneToOne
+    private Rating rating;
 }

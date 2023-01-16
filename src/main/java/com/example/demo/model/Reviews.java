@@ -22,6 +22,6 @@ public class Reviews {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
     private String review;
-    @OneToMany
-    private List<Book> bookId;
+    @ManyToOne
+    private Book bookId;
 }
