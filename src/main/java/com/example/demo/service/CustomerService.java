@@ -58,6 +58,7 @@ public class CustomerService {
             customer1.setLastName(customerDto.getLastName());
             customer1.setEmail(customerDto.getEmail());
             customer1.setAddress(customerDto.getAddress());
+            customer1.setGiftCardId(customerDto.getGiftCardId());
             Customer customer2=customerRepo.save(customer1);
             return modelMapper.map(customer2 , CustomerDto.class);
         }

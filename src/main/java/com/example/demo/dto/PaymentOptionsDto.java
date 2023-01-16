@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class PaymentOptionsDto {
 
-    private Integer optionId;
-    private String option;
+    private Integer paymentOptionId;
+    private String paymentOptionName;
 
 }
