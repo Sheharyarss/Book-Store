@@ -22,6 +22,6 @@ public class OrderStatus {
     private Long orderStatusId;
     private String statusValue;
 
-//    @OneToMany
-//    private List<Order> orderId;
+    @OneToMany
+    private List<Order> orderId;
 }

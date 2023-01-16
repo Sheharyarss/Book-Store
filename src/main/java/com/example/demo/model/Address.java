@@ -21,8 +21,6 @@ public class Address {
     private Long addressId;
     private String address;
     private String city;
-//    @OneToMany(cascade = CascadeType.PERSIST)
-//    @JoinColumn(name = )
-//    private List<Customer> customerId;
+
 
 }

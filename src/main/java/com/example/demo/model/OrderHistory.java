@@ -24,6 +24,6 @@ public class OrderHistory {
     private LocalDate dispatchedDate;
     private LocalDate deliveredDate;
 
-//    @ManyToOne
-//    private Order orderId;
+    @ManyToOne
+    private Order orderId;
 }
